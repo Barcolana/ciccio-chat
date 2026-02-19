@@ -63,6 +63,7 @@ if config_env() == :prod do
       ip: {0, 0, 0, 0},
       port: String.to_integer(System.get_env("PORT") || "4000")
     ],
+    check_origin: ["https://ciccio-chat.onrender.com", "https://ciccio-chat-1.onrender.com"],
     secret_key_base: secret_key_base
 
   # ## SSL Support
