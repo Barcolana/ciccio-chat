@@ -43,7 +43,6 @@ defmodule Whatsapp.MixProject do
       {:pbkdf2_elixir, "~> 2.0"},
       {:phoenix, "~> 1.8.3"},
       {:swoosh, "~> 1.4"},
-      {:swoosh_resend, "~> 0.1.0"},
       {:phoenix_ecto, "~> 4.5"},
       {:ecto_sql, "~> 3.13"},
       {:postgrex, ">= 0.0.0"},
