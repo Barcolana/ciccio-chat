@@ -10,6 +10,7 @@ defmodule Whatsapp.Application do
     children = [
       WhatsappWeb.Telemetry,
       Whatsapp.Repo,
+      {Finch, name: MyFinch},
       {DNSCluster, query: Application.get_env(:whatsapp, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Whatsapp.PubSub},
       # Start a worker by calling: Whatsapp.Worker.start_link(arg)

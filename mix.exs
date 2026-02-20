@@ -42,7 +42,11 @@ defmodule Whatsapp.MixProject do
     [
       {:pbkdf2_elixir, "~> 2.0"},
       {:phoenix, "~> 1.8.3"},
-      {:swoosh, "~> 1.4"},
+
+      # QUI fai la modifica importante
+      {:swoosh, "~> 1.11"},
+      {:finch, "~> 0.16"},
+      {:req, "~> 0.4"},
       {:phoenix_ecto, "~> 4.5"},
       {:ecto_sql, "~> 3.13"},
       {:postgrex, ">= 0.0.0"},
