@@ -6,15 +6,9 @@ defmodule Whatsapp.Accounts.UserNotifier do
 
   # Delivers the email using the application mailer.
   defp deliver(recipient, subject, body) do
-    email =
-      new()
-      |> to(recipient)
-      |> from({"Whatsapp", "contact@example.com"})
-      |> subject(subject)
-      |> text_body(body)
-
-    with {:ok, _metadata} <- Mailer.deliver(email) do
-      {:ok, email}
+    case Whatsapp.ResendMailer.send_email(recipient, subject, body) do
+      {:ok, _response} -> {:ok, %{to: recipient}}
+      {:error, reason} -> {:error, reason}
     end
   end
 
