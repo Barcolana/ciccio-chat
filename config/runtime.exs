@@ -49,7 +49,9 @@ if config_env() == :prod do
 
   # Configura Resend per email in production
   config :whatsapp, Whatsapp.Mailer,
-    adapter: Swoosh.Adapters.Resend,
+    adapter: Swoosh.Adapters.Finch,
+    finch_name: Whatsapp.Finch,
+    base_url: "https://api.resend.com",
     api_key: System.get_env("RESEND_API_KEY")
 
   config :whatsapp, Whatsapp.Accounts.UserNotifier,

@@ -45,7 +45,6 @@ defmodule Whatsapp.MixProject do
 
       # QUI fai la modifica importante
       {:swoosh, "~> 1.11"},
-      {:swoosh_resend, "~> 0.1.0"},
       {:finch, "~> 0.16"},
       {:req, "~> 0.4"},
       {:phoenix_ecto, "~> 4.5"},
