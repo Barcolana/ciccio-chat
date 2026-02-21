@@ -18,6 +18,16 @@ defmodule WhatsappWeb.RoomLive.Show do
         </:actions>
       </.header>
 
+      <%!-- Lista utenti connessi --%>
+    <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg mb-4">
+    <h3 class="font-bold text-sm text-blue-900 mb-2">👥 Utenti in questa stanza:</h3>
+    <div class="flex gap-2 flex-wrap">
+    <span class="px-3 py-1 bg-green-500 text-white rounded-full text-sm">
+      🟢 {@current_scope.user.email}
+    </span>
+    </div>
+    </div>
+
       <%!-- Area messaggi --%>
       <div id="messages" class="flex flex-col gap-2 p-4 h-96 overflow-y-auto bg-gray-50 rounded-lg mb-4">
         <%= for message <- @messages do %>
