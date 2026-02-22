@@ -65,11 +65,11 @@ defmodule WhatsappWeb.UserLive.Registration do
 
         {:noreply,
          socket
-         |> put_flash(
-           :info,
-           "An email was sent to #{user.email}, please access it to confirm your account."
-         )
-         |> push_navigate(to: ~p"/users/log-in")}
+         # |> put_flash(
+         # :info,
+         # "An email was sent to #{user.email}, please access it to confirm your account."
+         # )
+         |> push_navigate(to: ~p"/rooms")}
 
       {:error, %Ecto.Changeset{} = changeset} ->
         {:noreply, assign_form(socket, changeset)}
