@@ -75,16 +75,6 @@ defmodule WhatsappWeb.UserAuth do
     end
   end
 
-  def fetch_current_user(conn, _opts) do
-    if token = conn.params["token"] do
-      conn
-      |> put_session("user_token", token)
-      |> configure_session(renew: true)
-    else
-      conn
-    end
-  end
-
   defp ensure_user_token(conn) do
     if token = get_session(conn, :user_token) do
       {token, conn}

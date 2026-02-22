@@ -7,11 +7,9 @@ defmodule WhatsappWeb.Router do
     plug(:accepts, ["html"])
     plug(:fetch_session)
     plug(:fetch_live_flash)
-
     plug(:put_root_layout, html: {WhatsappWeb.Layouts, :root})
     plug(:protect_from_forgery)
     plug(:put_secure_browser_headers)
-    plug(WhatsappWeb.UserAuth, :fetch_current_user)
     plug(:fetch_current_scope_for_user)
   end
 
