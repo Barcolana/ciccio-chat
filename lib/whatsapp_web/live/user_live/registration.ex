@@ -57,9 +57,8 @@ defmodule WhatsappWeb.UserLive.Registration do
   def handle_event("save", %{"user" => user_params}, socket) do
     case Accounts.register_user(user_params) do
       {:ok, user} ->
-        {:noreply,
-         socket
-         |> WhatsappWeb.UserAuth.log_in_user(user)}
+        token = Accounts.generate_user_session_token(user)
+        {:noreply, socket |> Phoenix.LiveView.redirect(to: ~p"/rooms?token=#{token}")}
 
       {:error, %Ecto.Changeset{} = changeset} ->
         {:noreply, assign_form(socket, changeset)}
